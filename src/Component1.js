@@ -17,6 +17,17 @@ const Component1 = props => {
               iste dolorem magnam ex eius dolor corrupti. Voluptatibus aliquam
               ad dolores enim quam.
             </p>
+            <Spring
+              from={{ number: 0 }}
+              to={{ number: 10 }}
+              config={{ duration: 10000 }}
+            >
+              {props => (
+                <div style={props}>
+                  <h1 style={counter}>{props.number.toFixed()}</h1>
+                </div>
+              )}
+            </Spring>
           </div>
         </div>
       )}
@@ -28,6 +39,15 @@ const c1Style = {
   background: "steelblue",
   color: "#fff",
   padding: "1.5em"
+};
+
+const counter = {
+  background: "#333",
+  color: "#fff",
+  textAlign: "center",
+  width: "100px",
+  borderRadius: "50%",
+  margin: "1em auto"
 };
 
 export default Component1;
